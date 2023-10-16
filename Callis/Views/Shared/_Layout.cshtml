@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Callis.styles.css" asp-append-version="true" />
+    <style>
+        html{
+            height: 100%;
+        }
+       
+    </style>
 </head>
-<body>
+<body class="min-vh-100 d-flex flex-column">
     <header>
         <nav style="background-color:#304DE6" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -21,10 +27,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
                     <ul class="navbar-nav flex-grow-1 justify-content-end gap-3">
                         <li class="nav-item">
-                            <a class="btn bg-white text-dark" asp-controller="User" asp-action="SignIn">Login</a>
+                            <a class="btn bg-white text-dark" asp-controller="User" asp-action="Login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn bg-white text-dark" asp-controller="User" asp-action="SignUp">Sign Up</a>
+                            <a class="btn bg-white text-dark" asp-controller="Home" asp-action="SignUp">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -37,10 +43,15 @@
         </main>
     </div>
 
-    <footer style="background-color:#304DE6" class="border-top footer text-muted">
-        <div class="container text-white">
-            &copy; 2023 - Callis - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer style="background-color:#304DE6;" class="mt-auto p-2">
+        <div class="container text-white text-center">
+            <h4>Contact Us</h4>
+            <p class="m-0">20 Gordon Town Road</p>
+            <p class="m-0">Kingston 6</p>
+            <p class="m-0">Jamaica</p>
         </div>
+
+       
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
