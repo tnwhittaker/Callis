@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "Sign Up";
+    Layout = null;
+}
+@model User
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Callis</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Callis.styles.css" asp-append-version="true" />
+
+    <style>
+        html{
+            height:100%;
+        }
+    </style>
+    
+</head>
+<main class="container-fluid vh-100">
+    <section class="row">
+        <section style="background-color: #D9D9D9" class="d-sm-none d-md-block col-md h-100 vh-100">
+        </section>
+        <section class="col-md h-100 vh-100 shadow">
+            <aside class="text-center mt-5">
+                <img width="100px" src="~/images/TaskImage.png"/>
+            </aside>
+            <aside style="margin: 0 auto" class="w-75 mt-5 d-flex gap-4 flex-column">
+                <h4>Hello! Enter your information below</h4>
+
+               <form method="POST" class="d-flex flex-column gap-4">
+                    <input asp-for="Name" type="text" placeholder="Full Name" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control"  />
+                    <input asp-for="EmailAddress" type="email" placeholder="Email Address" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control"  />
+                    <input asp-for="PasswordHash" type="password" placeholder="Password" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control" />
+                    <button class="btn btn-primary">Sign Up</button>
+                    <aside>
+                        <a href="https://www.google.com">I already have an account</a>
+                    </aside>
+                </form>
+               
+                
+            </aside>
+           
+        </section>
+    </section>
+    
+</main>
+

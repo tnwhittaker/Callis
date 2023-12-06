@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Callis.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230912052322_AddTablesToDatabase")]
+    [Migration("20231128034935_AddTablesToDatabase")]
     partial class AddTablesToDatabase
     {
         /// <inheritdoc />

@@ -4,6 +4,7 @@ using Callis.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Callis.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231128040809_UpdateAllDatabaseTables")]
+    partial class UpdateAllDatabaseTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +39,7 @@ namespace Callis.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("AccountTypes", (string)null);
+                    b.ToTable("AccountTypes");
                 });
 
             modelBuilder.Entity("Callis.Models.Task", b =>
@@ -79,7 +82,7 @@ namespace Callis.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Tasks", (string)null);
+                    b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("Callis.Models.TaskStatus", b =>
@@ -96,7 +99,7 @@ namespace Callis.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("TaskStatuses", (string)null);
+                    b.ToTable("TaskStatuses");
                 });
 
             modelBuilder.Entity("Callis.Models.User", b =>
@@ -130,7 +133,7 @@ namespace Callis.Migrations
 
                     b.HasIndex("AccountTypeId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Callis.Models.Task", b =>

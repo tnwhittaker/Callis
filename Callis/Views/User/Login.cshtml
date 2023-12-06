@@ -20,11 +20,23 @@
 </head>
 <main class="container-fluid vh-100">
     <section class="row">
-        <section class="d-sm-none d-md-block col-md h-100 vh-100 bg-dark">
+        <section style="background-color: #D9D9D9" class="d-sm-none d-md-block col-md h-100 vh-100">
         </section>
-        <section class="col-md h-100 vh-100">
-            <p>Hello1</p>
-
+        <section class="col-md h-100 vh-100 shadow">
+            <aside class="text-center mt-5">
+                <img src="~/images/TaskImage.png"/>
+            </aside>
+            <aside style="margin: 0 auto" class="w-75 mt-5 d-flex gap-4 flex-column">
+                <h4>Welcome back! Please sign in below</h4>
+                <input type="email" placeholder="Email Address" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control"  />
+                <input type="password" placeholder="Password" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control" />
+                <button class="btn btn-primary">Login</button>
+                <aside>
+                    <span>New here?</span> <a href="https://www.google.com">Sign up</a>
+                </aside>
+                
+            </aside>
+           
         </section>
     </section>
     

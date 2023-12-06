@@ -4,12 +4,12 @@ namespace Callis.Data
 {
     public class AppDbInitializer
     {
-        private readonly ApplicationDbContext context;
+        private readonly ApplicationDbContext _context;
 
         //Constructor
         public AppDbInitializer(ApplicationDbContext context)
         {
-            this.context = context;
+            _context = context;
         }
         
         //Seeder Method
@@ -17,7 +17,7 @@ namespace Callis.Data
         {
                 //If table exists with no values then it creates a list 
                 //with the values and saves them in the DB
-                if(!context.TaskStatuses.Any())
+                if(!_context.TaskStatuses.Any())
                 {
                 
                    var StatusNames = new List<Models.TaskStatus>()
@@ -40,13 +40,38 @@ namespace Callis.Data
                        }
                    };
 
-                    context.TaskStatuses.AddRange(StatusNames);
-                    context.SaveChanges();
+                    _context.TaskStatuses.AddRange(StatusNames);
+                    _context.SaveChanges();
                     
                 }
 
+            if (!_context.AccountTypes.Any())
+            {
 
-            
+                var AccTypeNames = new List<Models.AccountType>()
+                   {
+                       new Models.AccountType()
+                       {
+                           acctype = "Manager"
+                       },
+                       new Models.AccountType()
+                       {
+                           acctype = "User"
+                       },
+                       new Models.AccountType()
+                       {
+                           acctype = "Admin"
+                       }
+                
+                    };
+
+                _context.AccountTypes.AddRange(AccTypeNames);
+                _context.SaveChanges();
+
+            }
+
+
+
         }
     }
 }
