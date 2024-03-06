@@ -28,13 +28,14 @@
             </aside>
             <aside style="margin: 0 auto" class="w-75 mt-5 d-flex gap-4 flex-column">
                 <h4>Welcome back! Please sign in below</h4>
-                <input type="email" placeholder="Email Address" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control"  />
-                <input type="password" placeholder="Password" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control" />
-                <button class="btn btn-primary">Login</button>
-                <aside>
-                    <span>New here?</span> <a asp-controller="User" asp-action="SignUp">Sign up</a>
-                </aside>
-                
+                <form method="POST" action="/UserController/Login" class="d-flex flex-column gap-4">
+                    <input type="email" placeholder="Email Address" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control"  />
+                    <input type="password" placeholder="Password" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control" />
+                    <button class="btn btn-primary">Login</button>
+                    <aside>
+                        <span>New here?</span> <a asp-controller="User" asp-action="SignUp">Sign up</a>
+                    </aside>
+                </form>
             </aside>
            
         </section>

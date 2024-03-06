@@ -14,11 +14,14 @@ namespace Callis.Controllers
             _db = dbContext;
         
         }
+
+        [Route("/User/Login", Name = "login")]
         public IActionResult Login()
         {
             return View();
         }
-
+        
+        [Route("/User/SignUp", Name = "signup")]
         public IActionResult SignUp()
         {
             return View();
@@ -26,7 +29,17 @@ namespace Callis.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult SignUp(User obj)
+        [Route("/User/LoginUser", Name = "loginuser")]
+        public IActionResult LoginUser(User obj)
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("/User/CreateUser",Name ="newuser")]
+        public IActionResult CreateUser(User obj)
         {
             try
             {
@@ -42,6 +55,7 @@ namespace Callis.Controllers
             }
             catch (DbUpdateException)
             {
+                
                 ViewBag.Message = "Account creation failed";
                 ViewBag.Success = false;
                 ViewBag.Image = "~/images/372103860_CHECK_MARK_400px.gif";

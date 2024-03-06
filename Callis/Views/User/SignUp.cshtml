@@ -35,11 +35,11 @@
             <aside style="margin: 0 auto" class="w-75 mt-5 d-flex gap-4 flex-column">
                 <h4>Hello! Enter your information below</h4>
 
-               <form method="POST" class="d-flex flex-column gap-4">
+               <form method="POST" action="/UserController/SignUp" class="d-flex flex-column gap-4">
                     <input asp-for="Name" type="text" placeholder="Full Name" required style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control"  />
                     <input asp-for="EmailAddress" type="email" required placeholder="Email Address" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control"  />
                     <input asp-for="PasswordHash" type="password" required placeholder="Password" style=" border:2px solid #ced4da; border-top:none; border-left:none; border-right:none" class="form-control" />
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign Up</button>
+                    <a class="btn btn-primary" asp-route="newuser" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign Up</a>
                     <aside>
                         <a asp-controller="User" asp-action="Login">I already have an account</a>
                     </aside>
